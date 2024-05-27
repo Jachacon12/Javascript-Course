@@ -36,8 +36,9 @@ console.log(getData(person));
 
 const invertirCadena = new InvertirCadena();
 
-//Ejecución inicial sin cambiar cadenaInvertir
-// Agregando un un bloque de try-catch, manajaremos el error apropiadamente. Esto evitara que el codigo no se rompa al lanzar el error.
+// Ejecución inicial sin cambiar cadenaInvertir
+// Agregando un un bloque de try-catch, manajaremos el error apropiadamente. 
+// Esto evitara que el codigo no se rompa al lanzar el error.
 
 try {
   invertirCadena.invertirCadena();
@@ -51,7 +52,9 @@ invertirCadena.cadenaInvertir = 'bob esponja y patricio estrella';
 
 console.log(invertirCadena.reverseString());
 
-// Intento de acceder a un método inexistente, de igual forma utilizamos un try-catch para manejar correctamente el error.
+
+// Intento de acceder a un método inexistente, de igual forma utilizamos 
+// un try-catch para manejar correctamente el error.
 
 try {
   invertirCadena.nuevoMetodo();
@@ -59,6 +62,7 @@ try {
   // Manejamos el error de acceso a un método inexistente
   console.error(error.message);
 }
+
 // Ejercicio 4
 
 const login = new Login('admin', 'passwd');
@@ -68,21 +72,17 @@ let logbad = new Login('pepe', 'bad');
 
 // Ejercicio 5
 
-const userLogin = (username, password) => {
-  const userData = new Login(username, password);
-  userData.login();
-};
-
-const goodButton = document.getElementById('loginSuccess');
-
+const goodLoginButton = document.getElementById('loginSuccess');
 const badLoginButton = document.getElementById('loginFailure');
 
-goodButton.addEventListener('click', () => {
-  login.login();
+goodLoginButton.addEventListener('click', () => {
+  userLogin.login();
 });
 badLoginButton.addEventListener('click', () => {
   logbad.login();
 });
+
+
 // Ejercicio 6
 
 let loginWitUsername = (username, password) => {
