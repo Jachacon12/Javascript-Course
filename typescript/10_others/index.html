@@ -121,6 +121,39 @@ const miMoto: Motorcycle = {
 turnOnVehicle(miCarro);
 turnOnVehicle(miMoto);
         </code></pre>
+        <h2 id="ejercicio-1">Ejercicio 4 (2)</h2>
+        <p>
+          Crea una `función genérica`, que acepte un array que pueda contener
+          `strings` y `numbers` y devuelva el mismo array sin el primer
+          elemento.
+        </p>
+        <pre>
+          <code class="lang-javascript">
+// Definición de la función genérica sin restricción
+function removeFirstEntry<T>(array: T[]): T[] {
+  return array.slice(1);
+}
+
+// Definición de la función genérica con restricción
+
+function removeFirstElement<T extends string | number>(array: T[]): T[] {
+  return array.slice(1);
+}
+
+const strArray: string[] = [
+  'Hello',
+  'World',
+  'Im',
+  'a',
+  'Full',
+  'Stack',
+  'Developer',
+];
+const numArray: number[] = [1, 2, 3, 4, 5, 6, 7];
+const mixedArray: Array<number | string> = ['Hello', 'I', 'have', 3, 'tasks'];
+const unsupportedArray = [{ name: 'Lucas', surname: 'Fernandez' }, 'Hello', 22];
+          </code>
+        </pre>
       </div>
     </div>
     <script src="../../prism.js"></script>
