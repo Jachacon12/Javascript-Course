@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#f2f6ff"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#2B2830"
+    />
+    <title>Others - TypeScript</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../prism.css" />
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <div class="section">
+        <a class="back-button" href="/typescript/typescript.html"> Back</a>
+
+        <h1 id="utility-types">Others</h1>
+        <h2 id="overview">Semana 3</h2>
+        <h2 id="ejercicio-1">Ejercicio 1 (2)</h2>
+        <p>
+          Crea una interfaz 'Person' que tenga como atributos 'name', 'age' y
+          'profession'. Ahora define una arrow function que tenga como parámetro
+          esta interfaz y que devuelva un array con el valor de sus propiedades,
+          esta función tiene que tener tipado el parámetro de entrada y el
+          return.
+        </p>
+
+        <p>Su definición sería la siguiente</p>
+        <pre><code class="lang-javascript">
+interface Person {
+  name: string;
+  age: number;
+  profession: string;
+}
+
+const getPersonValues = (person: Person): (string | number)[] => {
+  return [person.name, person.age, person.profession];
+};
+
+const examplePerson: Person = {
+  name: 'Jorge',
+  age: 29,
+  profession: 'developer',
+};
+
+const values = getPersonValues(examplePerson);
+</code></pre>
+      </div>
+    </div>
+    <script src="../../prism.js"></script>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
