@@ -74,11 +74,53 @@ console.log(sumOrConcatenate(5, 'World')); // Output: "5:World"
 console.log(sumOrConcatenate('Hello', 10)); // Output: "Hello:10"
 </code></pre>
         <h2 id="ejercicio-1">Ejercicio 3 (3)</h2>
-        <p>
-          Crea dos interfaces, una llamada `Car` y otra `Motorcycle`. La primera
-          tendrá las propiedades `tires` (number), `turnOnEngine()` (función que
-          devuelve void) y `pressPedal()` (función que devuelve void).
-        </p>
+        <ul>
+          <li>
+            Crea dos interfaces, una llamada `Car` y otra `Motorcycle`. La
+            primera tendrá las propiedades `tires` (number), `turnOnEngine()`
+            (función que devuelve void) y `pressPedal()` (función que devuelve
+            void).
+          </li>
+          <li>
+            La segunda tendrá las propiedades `tires` (number), `turnOnEngine()`
+            (función que devuelve void) y `openThrottle()` (función que devuelve
+            void).
+          </li>
+          <li>
+            Escribe una función que acepte un parámetro que pueda ser `Car` o
+            `Motorcycle` que, primero llame a turnOnEngine, y luego si es Car
+            llame a pressPedal pero si es Motorcycle llame a openThrottle().
+          </li>
+          <li>
+            Para la comprobación no valdrá `typeof`, necesitaremos hacer uso de
+            type predicates.
+          </li>
+        </ul>
+        <p>Respuesta completa esta en <a href="./index.ts">index.ts</a></p>
+        <pre><code class="lang-javascript">
+const miCarro: Car = {
+  tires: 4,
+  turnOnEngine() {
+    console.log('Car engine started');
+  },
+  pressPedal() {
+    console.log('Car pedal pressed');
+  },
+};
+
+const miMoto: Motorcycle = {
+  tires: 2,
+  turnOnEngine() {
+    console.log('Motorcycle engine started');
+  },
+  openThrottle() {
+    console.log('Motorcycle throttle opened');
+  },
+};
+
+turnOnVehicle(miCarro);
+turnOnVehicle(miMoto);
+        </code></pre>
       </div>
     </div>
     <script src="../../prism.js"></script>
