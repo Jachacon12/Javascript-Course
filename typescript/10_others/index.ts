@@ -20,3 +20,19 @@ const examplePerson: Person = {
 const values = getPersonValues(examplePerson);
 
 console.log(values);
+
+// Escribe una función llamada sumOrConcatenate que acepte dos parámetros.
+// Cada uno de estos parámetros podrá ser de tipo number o string.
+// La función devolverá una suma si los dos parámetros son números,
+// una concatenación con el símbolo `-` si son los dos `strings`
+// o una cadena concatenadad con `:` si uno es un number y el otro string.
+
+function sumOrConcatenate(x: number | string, y: number | string) {
+  if (typeof x === 'number' && typeof y === 'number') return x + y;
+  if (typeof x === 'string' && typeof y === 'string') return `${x}-${y}`;
+  return `${x}:${y}`;
+}
+console.log(sumOrConcatenate(5, 10)); // Output: 15
+console.log(sumOrConcatenate('Hello', 'World')); // Output: "Hello-World"
+console.log(sumOrConcatenate(5, 'World')); // Output: "5:World"
+console.log(sumOrConcatenate('Hello', 10)); // Output: "Hello:10"
